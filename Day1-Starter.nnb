@@ -1,0 +1,5311 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "# Index for Intro To JavaScript"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "[Intro To JS](#introjs)<br>\n&emsp;[var keyword](#var)<br>\n&emsp; [Strings](#strings)<br>\n&emsp;&emsp;[Exercise #1](#ice1)<br>\n&emsp;&emsp;[Template Strings](#templit)<br>\n&emsp;&emsp;[Exercise #2](#ice2)<br>\n&emsp; [typeof Operator](#typeof)<br>\n&emsp; [Number Type](#numerics)<br>\n&emsp;&emsp; [Math Operations](#math)<br>\n&emsp;&emsp; [Type Conversion](#typeconver)<br>\n&emsp;[Booleans](#bools)<br>\n&emsp;[Null and Undefined](#nullundef)<br>\n&emsp; [Let and Const](#letconst)<br>\n&emsp; [Arrays](#arrays)<br>\n&emsp;&emsp;[Rest Operator](#rest)<br>\n&emsp;&emsp;[forEach](#foreach)<br>\n&emsp;&emsp;[filter](#filter)<br>\n&emsp;&emsp;[map](#map)<br>\n&emsp;&emsp;[reduce](#reduce)<br>\n&emsp;&emsp;[Exercise #3](#ice3)<br>\n&emsp;[Functions](#functions)<br>\n&emsp;&emsp;[Regular Functions](#regfunc)<br>\n&emsp;&emsp;&emsp;[Exercise #4](#ice4)<br>\n&emsp;&emsp;&emsp;[Arrow Functions](#arrowfunc)<br>\n&emsp;&emsp;&emsp;[Exercise #5](#ice5)<br>\n&emsp;&emsp;&emsp;[Exercise #6](#ice6)<br>\n&emsp;&emsp;[Spread Operator](#spread)<br>\n&emsp;[Flow Control](#flow)<br>\n&emsp;&emsp;[if Statement](#if)<br>\n&emsp;&emsp;&emsp;[Exercise #7](#ice7)<br>\n&emsp;&emsp;&emsp;[Ternary Operator](#ternary)<br>\n&emsp;&emsp;[for Loop](#loop)<br>\n&emsp;&emsp;&emsp;[Exercise #8](#ice8)<br>\n&emsp;&emsp; [for of Loop](#forof)<br>\n&emsp;&emsp; [While](#while)<br>\n&emsp;&emsp; [Break and Continue](#bandc)<br>\n&emsp; [Application State](#state)<br>\n&emsp; [Homework](#hw)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "# Intro To JavaScript\n<a id=\"introjs\"></a>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "In 1995 Netscape Navigator (the first popular GUIed web browser) introduced JavaScript to have a programmatic language that worked within the web browser (typical uses for most other languages like Perl, Python, Java, etc., work on the server hosting the website, not the browser running on the client's computer). This led to colossal innovation and, eventually, widespread adoption of the JavaScript language in all browsers. Unfortunately, this also meant that each browser could implement JavaScript in its own way. This issue was also seen in the early days of CSS. To combat this issue and allow browsers to respond in the same to JavaScript, a series of standards was created called ECMAScript. While ECMAScript has many different releases and versions, the two significant releases we talk about are ES5 and ES6, as the ES5 and ES6 releases added tons of new capabilities. Both versions have slightly different ways of handling things.\n\nWe have some good news! JavaScript was created in 10 days, so we can surely learn it in less!\nJavaScript became popular because using it within the webpage allowed you to send the user a copy of your webpage. Then, using API calls or conditional rendering, you could change and update a portion of the page without updating the entire page or even without making another request back to the website server.\n\nLike Python, JavaScript is dynamically typed, meaning datatypes are not declared. Instead, the language assumes the value using Duck Typing (if it walks, talks, and acts like a duck, it must be a duck). Dynamically typed languages are easier to write but harder to maintain. Instead of getting errors at compile time (like while working in VS Code), you get errors at the run time (like when someone is actively using your application). Next Week we will learn how to use TypeScript to enable Static typing in JavaScript.\n\n<strong>Note:</strong> Java and JavaScript are completely unrelated. The reason JavaScript has its name is marketing. JavaScript was originally called Mocha, but in 1995 Java was all the rage, and Netscape decided to capitalize on its popularity by changing the name Mocha to JavaScript."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Comments\n<a id=\"comments\"></a>\nTo write comments in JS we can use // at the beginning of a line or in the middle of a line\n\nTo make a multiline comment we use /* comment */"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// I am a comment\r\n\r\nconsole.log('Hello World') // this logs hello world to the console and is a comment\r\n\r\n/*\r\nI am a comment\r\nthat has multiple\r\nlines and is really\r\ncool\r\n*/"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Hello World",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Var Keyword\n<a id=\"var\"></a>\n\nIn JavaScript, we can declare a variable without giving in a value.  \n\nVariables should be declared using a keyword such as var, let, or const (more on let and const later)\n\n<strong>Note:</strong> When creating variables in JS, we don't use snake_case like in Python; we use camelCase in JS.\n\ncamelCase is where the first letter of the first word is lowercase, and any other comments will start with a Capital Letter, so in Python and snake case, we would write this_is_my_var, and in JS, it would be thisIsMyVar\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var firstName;"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Note: When we declare a variable and do not assign it a value, it gets a value of 'undefined'\n\n<strong>Note:</strong> console.log() is a function similar to the Python print function that will forward the output to the standard output stream"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(firstName);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "undefined",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### We can assign the variable a value like so: \n<strong>Note:</strong> I only use var in the initial declaration"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "firstName = 'George';"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'George'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(firstName);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "George",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### We can even declare and assign a variable all in one step."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var lastName = 'Bush';"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(lastName);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Bush",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Redeclaring\nThis is pretty neat, but it has its issues. One major issue is that with the var keyword, you can redeclare your variable, and this should be avoided."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var lastName;\r\nconsole.log(lastName); // it's not undefined here, we get the previous value"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "undefined",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var lastName = 'Clinton' // now we have overwritten the original variable lastName\r\nconsole.log(firstName, lastName) // and turned the president into a funk musician"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "George Clinton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Note: While it possible to create variables without a keyword like var, it is considered bad practice and should be avoided.  It can easily create bugs and issues within your code base"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Bad Practice; AVOID!\r\nmessage = 'DO NOT DO THIS!'\r\nconsole.log(message);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "DO NOT DO THIS!",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Statement Termination\nJavaScript lines end with a semicolon or a newline, so to write multiple statements on the same line, you have to use semicolons between the statements, or just use a newline"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//On One Line\r\nconsole.log(firstName); console.log(lastName);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "George",
+                                "Clinton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// on Multiple Lines (the semi colons are now optional)\r\nconsole.log(firstName);\r\nconsole.log(firstName)\r\nconsole.log(lastName);\r\nconsole.log(lastName)\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "George",
+                                "George",
+                                "Clinton",
+                                "Clinton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// But this will not work\r\nconsole.log(firstName) console.log(lastName)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "George",
+                                "Clinton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Strings"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<a id=\"strings\"></a>\n\nStrings in JS are declared and used very similarly to Python. You can use single or double quotes (but not triple quotes), and useescape sequences to place ambiguous characters.\n\n<strong>Note:</strong> Like Python, Strings are also immutable"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var myString1 = \"This is a string\";\r\nvar myString2 = 'This is also a string';\r\nvar myString3 = \"John's string with an apostrophe\";\r\nvar myString4 = 'John\\'s string with an apostrophe';\r\nvar myString5 = \"My \\\"string\\\" with quotes\";\r\nvar myString6 = 'My \"string\" with quotes';\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(myString1)\r\nconsole.log(myString2)\r\nconsole.log(myString3)\r\nconsole.log(myString4)\r\nconsole.log(myString5)\r\nconsole.log(myString6)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "This is a string",
+                                "This is also a string",
+                                "John's string with an apostrophe",
+                                "John's string with an apostrophe",
+                                "My \"string\" with quotes",
+                                "My \"string\" with quotes",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### String Concatenation"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Just like in Python, we can concatenate string with a plus sign"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var fullName = firstName + ' ' + lastName;\r\nconsole.log(fullName);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "George Clinton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Sometimes you don't want to make a new variable and you just want to print the two variable with console.log. This works similarily to Python."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(firstName, lastName)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "George Clinton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Access Characters in a String\nThis works similarly to Python, except it does not allow for negative indices."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "fullName[0]"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'G'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "fullName[8]"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'l'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(fullName[25]) //Note: We Do not get an error, but we do get undefined"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "undefined",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(fullName[-1]) //Note: We Do not get an error with a negative index, but we do get undefined"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "undefined",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### String Methods"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### Convert to UPPERCASE\nJS provides the toUpperCase Method\n\n<strong>Note:</strong> Strings are immutable, so this doesn't affect the value of the original string"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(fullName);\r\nconsole.log(fullName.toUpperCase());"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "George Clinton",
+                                "GEORGE CLINTON",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### Convert to lowercase\nJS provides the toLowerCase Method\n\n<strong>Note:</strong> Strings are immutable, so this doesn't affect the value of the original string"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(fullName);\r\nconsole.log(fullName.toLowerCase());"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "George Clinton",
+                                "george clinton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### Convert to TitleCase\nJS does not provide us with this ability but we can create our own.\n\nDon't worry, no need to understand this function now, just providing it for you as a helpful resource."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function titleCase(str) {\r\n  var words = str.toLowerCase().split(' ');\r\n  for (var i = 0; i < words.length; i++) {\r\n    words[i] = words[i].charAt(0).toUpperCase() + str[i].slice(1); \r\n  }\r\n  return str.join(' ');\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "titleCase(\"tHis SeNtenCe was WRIttEn by someone WiTh a malfuncTioning shift KEY\")"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "TypeError",
+                                "message": "str.join is not a function",
+                                "stack": "    at titleCase (<Cell 47> [6, 9])\n    at <Cell 48> [1, 9]\n    at <Cell 48> [4, 46]\n    at Script.runInContext (node:vm:133:12)\n    at Script.runInNewContext (node:vm:138:17)\n    at Object.runInNewContext (node:vm:296:38)\n    at C (c:\\Users\\bstan\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:113345)\n    at t.execCode (c:\\Users\\bstan\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:114312)\n    at k.<anonymous> (c:\\Users\\bstan\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:142156)\n    at k.emit (node:events:518:28)"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### Finding the length\nJS provides a .length method (not a function like in Python) to obtain this information."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "fullName"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "'George Clinton'"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "fullName.length"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "14"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### String Slicing\nWe can use the slice method to obtain a portion of the string using indices.\n\n.slice(inclusive start index, exclusive end index)\n\n<strong>Note:</strong> Just like Python indices start with 0 in JS"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(fullName)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "George Clinton",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(fullName.slice(2, 8))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "orge C",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(fullName.slice(5))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "e Clinton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### Using negative Indices\nSometimes it's easier to count from the end of a string. We can do this by using negative indexing."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(fullName.slice(-5))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "inton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(fullName.slice(2, -2))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "orge Clint",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Negative index does NOT work with bracket notation. Must use .slice\r\nconsole.log(fullName[-3])\r\nconsole.log(fullName.slice(-3, -2))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "undefined",
+                                "t",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### In Class Exercise #1\n<a id=\"ice1\"></a>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "In the cell provided, create a variable named 'compoundString' with the value 'hereinbefore'\n\nNow, use the variable and the slice function to print (log to the console) the word in"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var compoundString = 'hereinbefore';\r\n\r\nconsole.log(compoundString.slice(4, 6))\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "in",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### Replacing Substrings\nWe can replace a portion of a string using the .replace method."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(fullName);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "George Clinton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(fullName.replace('George', 'Bill'));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Bill Clinton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(fullName.replace(/[aeiou]/g, m=>m.toUpperCase()))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "GEOrgE ClIntOn",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Note:</strong> The Original String fullName has remained unchanged throughout these methods because strings are immutable"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(fullName)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "George Clinton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "string = 'my_name_is_brian'\r\n\r\nstring.replace(/[-_ ][A-Za-z]/g, m => m.slice(-1).toUpperCase())"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'myNameIsBrian'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### Template Literal\n<a id=\"templit\"></a>\nOften called Template Strings which are similar to f-strings in Python\n\nWe can use Backticks (\\`) (usually next to the one key on the same key as the ~) to declare a string and then use ${myVariable} to insert a variable\n\nThese also allow for multiline strings\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var stringMultiLine = `This is a string\r\nthat is written \r\non multiple lines`\r\n\r\nconsole.log(stringMultiLine);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "This is a string",
+                                "that is written ",
+                                "on multiple lines",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var funkMan = `The best funk musician of his time was ${fullName}`\r\n\r\nconsole.log(funkMan);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "The best funk musician of his time was George Clinton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var funkMan2 = 'The best funk musician of his time was ${fullName}'\r\n\r\nconsole.log(funkMan2);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "The best funk musician of his time was ${fullName}",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "We can even use multiple varaibles in one string"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var funkInfo = `The best funk musician of his time was ${lastName}, ${firstName}: ${fullName.toUpperCase()}`\r\n\r\nconsole.log(funkInfo);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "The best funk musician of his time was Clinton, George: GEORGE CLINTON",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "fullName.toLowerCase()"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'george clinton'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "fullName.toLocaleLowerCase('tr')"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'george clinton'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var x = 958174891327483214\r\n\r\nx.toLocaleString('ar-EG')"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'٩٥٨٬١٧٤٬٨٩١٬٣٢٧٬٤٨٣٬٣٠٠'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### In Class Exercise #2\n<a id=\"ice2\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "In the cell provided, create 3 variables describing your best friend, then tell us about your best friend using a template string."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var char1 = 'smart';\r\nvar char2 = 'funny';\r\nvar char3 = 'not as tall as me';\r\n\r\nvar myBFF = `My best friend is ${char1}, ${char2}, and ${char3}`\r\nconsole.log(myBFF);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "My best friend is smart, funny, and not as tall as me",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### typeof Operator\n<a id=\"typeof\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "JS provide us with the typeof operator to determine the datatype of a variable (it is not a function, thus does not require parentheses)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "typeof 'Hello World';"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'string'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "typeof fullName;"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'string'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Numeric Type\n<a id=\"numerics\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Unlike many other languages, JS only has one numeric type.\n\nSo in JS, all numbers (ints, shorts, longs, floats, and doubles) are stored as double precision floating point numbers as their numeric datatype"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var someInt = 123;\r\nconsole.log(someInt);\r\nconsole.log(typeof someInt);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "123",
+                                "number",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var someFloat = 3.14;\r\nconsole.log(someFloat);\r\nconsole.log(typeof someFloat);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "3.14",
+                                "number",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### Mathematical Operations\n<a id=\"math\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Basic mathematic operations are the same as in Python, except JS does not have built in integer division (// in Python)\n\nWe also gain the ++ and -- operators that will increment or decrement your variable by one"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Addition</strong>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var sum = 5 + 5;\r\nconsole.log(sum);\r\n\r\nsum += 5; // sum = sum + 5\r\nconsole.log(sum);\r\n\r\nsum++; // sum = sum + 1\r\nconsole.log(sum)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "10",
+                                "15",
+                                "16",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Subtraction</strong>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var diff = 10 - 5;\r\nconsole.log(diff);\r\n\r\ndiff -= 2; // diff = diff - 2\r\nconsole.log(diff);\r\n\r\ndiff--; // diff = diff - 1\r\nconsole.log(diff)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "5",
+                                "3",
+                                "2",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Muplication</strong>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var prod = 5 * 5;\r\nconsole.log(prod);\r\n\r\nprod *= 5; // prod = prod * 5\r\nconsole.log(prod);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "25",
+                                "125",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Division</strong>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var quotient = 88 / 22;\r\nconsole.log(quotient)\r\nconsole.log(typeof quotient)\r\n\r\nquotient /= 8; // quotient = quotient / 8\r\nconsole.log(quotient);\r\nconsole.log(typeof quotient);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "4",
+                                "number",
+                                "0.5",
+                                "number",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Exponents</strong>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var square = 5**2;\r\nconsole.log(square);\r\n\r\nsquare **= 2; // square = square ** 2\r\nconsole.log(square);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "25",
+                                "625",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Floor Division</strong>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "JS provides a helper class called Math to provide some Mathematical operations, this class is built-in to JS"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// In python we did 5//2 = 2\r\n\r\nvar floor = Math.floor(5/2)\r\nconsole.log(floor)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "2",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Ceiling Division</strong>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var ceiling = Math.ceil(5/2)\r\nconsole.log(ceiling);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "3",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Prefixing and Postfixing ++</strong>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var prefixPlus = 1;\r\nconsole.log(++prefixPlus); // 2\r\nconsole.log(prefixPlus); // 2\r\n\r\nvar postfixPlus = 1;\r\nconsole.log(postfixPlus++); // 1\r\nconsole.log(postfixPlus); // 2"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "2",
+                                "2",
+                                "1",
+                                "2",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Prefixing and Postfixing --</strong>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var prefixMinus = 1;\r\nconsole.log(--prefixMinus); // 0\r\nconsole.log(prefixMinus); // 0\r\n\r\nvar postfixMinus = 1;\r\nconsole.log(postfixMinus--); // 1\r\nconsole.log(postfixMinus); // 0"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "0",
+                                "0",
+                                "1",
+                                "0",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Prefix\r\nvar i = 0;\r\n\r\nwhile (i < 10){\r\n    console.log(i++);\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "0",
+                                "1",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Postfix\r\nvar j = 0;\r\n\r\nwhile (j < 10){\r\n    console.log(++j);\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1",
+                                "2",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Modulo</strong>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Remember the Modulo is the remainder left after division. This is a very important tool."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var mod = 37 % 8;\r\nconsole.log(mod);\r\n\r\nmod %= 2;\r\nconsole.log(mod);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "5",
+                                "1",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Type Conversions</strong>\n<a id=\"typeconver\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "JS provides a way to convert numbers and strings, similar to the int() and str() functions in Python"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var stringNum = '76';\r\nconsole.log(typeof stringNum);\r\n\r\nvar myNum = parseInt(stringNum);\r\nconsole.log(myNum);\r\nconsole.log(typeof myNum);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "string",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Note: </strong> Using parseInt on a decimal number gives you a whole number (rounding down). Instead, use parseFloat."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var someNumber = '43.23';\r\nconsole.log(typeof someNumber);\r\n\r\nvar someInt = parseInt(someNumber);\r\nconsole.log(someInt);\r\n\r\nvar someFloat = parseFloat(someNumber);\r\nconsole.log(someFloat)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "string",
+                                "43",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Can also use the Number() constructor function\r\n\r\nvar anotherStringNum = '3478'\r\n\r\nvar anotherNum = Number(anotherStringNum);\r\nconsole.log(anotherNum);\r\nconsole.log(typeof anotherNum);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "3478",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var aNumber = 324;\r\nconsole.log(typeof aNumber);\r\n\r\n// use the Number.toString() method\r\nvar aStringNumber = aNumber.toString();\r\nconsole.log(aStringNumber);\r\nconsole.log(typeof aStringNumber);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "number",
+                                "324",
+                                "string",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Interactions with Strings</strong>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Unlike Python, JS will implicitly convert your number to a string when adding strings and integers.\n\nThis behavior makes sense when you think about the reason for JavaScript. JS was developed to deliver information to an HTML page, and generally, when you are doing this, you want to include your number in a string and not do mathematical operations."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// check this out\r\nvar coolStuff = 3.14 + '4';\r\nconsole.log(coolStuff)\r\nconsole.log(typeof coolStuff)\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "3.144",
+                                "string",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Lets correct this to do math\r\nvar coolStuff2 = 3.14 + parseInt('4');\r\nconsole.log(coolStuff2)\r\n\r\n/*\r\nNote This operation shows use 7.140000000000001\r\nand not 7.14 like we would expect\r\nThis is due to the limited precision of binary floating-point representations\r\nas numbers when stored in memory are stored in a binary (base 2) number system as opposed to\r\nthe the base 10 (decimal) system we are used to\r\n*/"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "7.140000000000001",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Or to explicitly tell it to add as strings we can write:\r\nvar coolStuff3 = 3.14.toString() + '4';\r\nconsole.log(coolStuff3)\r\nconsole.log(typeof coolStuff3)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "3.144",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//using decimal numbers\r\nvar coolStuff4 = 3.4 + parseFloat('4.3');\r\nconsole.log(coolStuff4)\r\nconsole.log(typeof coolStuff4)\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "7.699999999999999",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var guessThis = '10' + '9';\r\nconsole.log(guessThis); // A. 19, B. 109, C. NaN, D. Undefined"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "109",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var guessThis2 = '10' - '9';\r\nconsole.log(guessThis2); // A. 1 B. 10, C. 9, D. Undefined"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var guessThis3 = 10 > '9';\r\nconsole.log(guessThis3);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "true",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var guessThis4 = '100' > '9' \r\nconsole.log(guessThis4);\r\n\r\n// Both values are already strings, so no need to for any type conversions. strings compare alphabetically in which 1 "
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "false",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Boolean Types\n<a id=\"bools\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Boolean datatypes are true and false in JS, not True and False like in Python (notice the capitalization)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var myBool1 = true;\r\nconsole.log(myBool1);\r\nconsole.log(typeof myBool1);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "true",
+                                "boolean",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var myBool2 = false;\r\nconsole.log(myBool2);\r\nconsole.log(typeof myBool2);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "false",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Comparison Operators"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "These work just like they do in Python or in mathematics"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(1 < 2); // true\r\nconsole.log(1 > 2); // false\r\nconsole.log(10 >= 10); // true\r\nconsole.log(10 <= 2); // false\r\nconsole.log(1 == 2); // false\r\nconsole.log(1 != 2); // true\r\n\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "true",
+                                "false",
+                                "true",
+                                "false",
+                                "false",
+                                "true",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Strict Equailty"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "In JS we have something called strict equality `===` and something called loose equality `==`\n\nWith Loose equality, JS can implicitly type convert and can check if the values are the same\n\nWith Strict equality, JS ensures both the type and the values are the same"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var numOne = 1;\r\nvar strOne = '1';\r\n\r\nconsole.log(numOne == strOne); // true - same value, different datatype"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "true",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(numOne === strOne) // false - because different datatype"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "false",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Negating booleans"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "In Python, we had access to the `not` keyword, in JS we only have access to the logical not operator `!`\n\nIt can precede any boolean arguement to switch its value"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(numOne != strOne); // same values even though type is different that is OKAY"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "false",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(numOne !== strOne); // they do not have the same datatype"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "true",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(!true)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "false",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(!false)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "true",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Converting to Booleans"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// use the Boolean() constructor function\r\n\r\nconsole.log(Boolean('false')) //prints true because a string with a value is considered true\r\nconsole.log(Boolean('')) //prints false because an empty string is considered false\r\nconsole.log(Boolean(44)) //prints true because any number other than 0 is true\r\nconsole.log(Boolean(0)) //prints false because 0 is always false\r\n\r\n\r\n// undefined and null convert to false\r\nconsole.log(Boolean(undefined)) \r\nconsole.log(Boolean(null)) "
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "true",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Double Negation\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Another common tactic to convert variables to booleans with to use a double negation `!!`"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var myName = 'John Jacob Jinglehiemer Schmidt';\r\nconsole.log(myName);\r\n\r\n// Note: using one ! gives us the opposite output we would have gotten than if we passed the value to the Boolean wrapper\r\nconsole.log(!myName);\r\n\r\n//Here, we use the negation once to convert to a boolean and then again to return it back to its correct value\r\nconsole.log(!!myName)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "John Jacob Jinglehiemer Schmidt",
+                                "false",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var emptyString = '';\r\n\r\nconsole.log(emptyString);\r\nconsole.log(!emptyString);\r\nconsole.log(!!emptyString);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                "true",
+                                "false",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Chaining Booleans"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "In Python, we had the keywords `and` and `or`, but in JS we use the operators `&&` and `||` (and & or)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "true || true"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mtrue\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "true || false"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mtrue\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "false || true"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mtrue\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "false || false"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mfalse\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "true && true"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mtrue\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "true && false"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mfalse\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "false && true"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mfalse\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "false && false"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mfalse\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Short Circuiting "
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "When using the `&&` operator, once an expression returns false no following expressions are ran.\n\nWith the || operator, it will stop and return true if the first argument is true"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function t1(){\r\n    console.log('t1 is running');\r\n    return false;\r\n}\r\n\r\nfunction t2(){\r\n    console.log('t2 is running');\r\n    return false;\r\n}\r\n\r\nfunction t3(){\r\n    console.log('t3 is running');\r\n    return true;\r\n}\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Now, chaining these two functions with the add operator, we see that the only output in the console is `t1 ran`. This is because t1 returned false, so JS decided it already knew the statement should return false, so it doesn't execute the t2() function."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "t1()&&t2()&&t3()"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "t1 is running",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mfalse\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "t1()||t2()||t3()"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "t1 is running",
+                                "t2 is running",
+                                "t3 is running",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mtrue\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## null vs undefined\n<a id=\"nullundef\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "undefined means the variable was declared and not given a value or an undefined value\n\nnull is a value and can be assigned to represent no value"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var myUndefined1 = undefined\r\nvar myUndefined2\r\nvar myNull = null\r\n\r\nconsole.log(myUndefined1)\r\nconsole.log(myUndefined2)\r\nconsole.log(myNull)\r\nconsole.log('\\ntypes: \\n')\r\nconsole.log(typeof myUndefined1)\r\nconsole.log(typeof myUndefined2)\r\nconsole.log(typeof myNull) //null is an object!\r\nconsole.log(myNull === null);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "undefined",
+                                "undefined",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Let and Const\n<a id=\"letconst\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "So far we have declared all our variables with the keyword var.\n\nIn the current JS (post ES-6), the word var should actually be avoided at all costs.\n\nIn ECMAScript 6 they introduced let and const, which vary in scope and in redeclaration from var\n\nFor more information watch this great YouTube video <a href=\"https://youtube.com/watch?v=9WIJQDvt4Us\">youtube.com/watch?v=9WIJQDvt4Us</a>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var myVariable = 'hello'\r\nconsole.log(myVariable)\r\n// var can be redeclared; This can be dangerous\r\n\r\nvar myVariable = 'world';\r\nconsole.log(myVariable);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "hello",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let myLet = 'hello'\r\nconsole.log(myLet)\r\n//Throws an error on redeclaration; Saves us from ourselves\r\nlet myLet = 'world'\r\nconole.log(myLet)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "Error",
+                                "message": "Failed to generate code object, \nundefined\n    ^\n\nIdentifier 'myLet' has already been declared",
+                                "stack": ""
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const myConst = 'Hello';\r\nconsole.log(myConst);\r\n//Throws an error on redeclaration; Saves us from ourselves\r\n\r\nconst myConst = 'World';\r\nconsole.log(myConst);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "Error",
+                                "message": "Failed to generate code object, \nundefined\n      ^\n\nIdentifier 'myConst' has already been declared",
+                                "stack": ""
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "You can still reassign the let varaibles, but not the const variables because they are constant (do not change)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let myOtherLet = 'Brian';\r\nconsole.log(myOtherLet);\r\n\r\n// Reassign the variable that was declared with a let\r\nmyOtherLet = 'Stanton';\r\nconsole.log(myOtherLet);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Brian",
+                                "Stanton",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const myOtherConst = 'Coding'\r\nconsole.log(myOtherConst);\r\n\r\n//not allowed/Throws Error as a const can never change\r\nmyOtherConst = 'Temple';\r\nconsole.log(myOtherConst);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Coding",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let testLetNB = 'This is a test'\r\n\r\ntestLetNB = 'Testing 123...'\r\n\r\nconsole.log(testLetNB)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Testing 123...",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Also, Let and Const have different scoping than var.\n\nLet and Const are blocked scoped, meaning they are only availible to their code block or descendent code blocks."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "if (true) {\r\n    var testVariable = 'test'; // var is globally scoped (unless declared in a function - then function scoped)\r\n    console.log('Inside Block:', testVariable)\r\n}\r\n\r\n\r\nconsole.log('Outside Block:', testVariable)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Inside Block: test",
+                                "Outside Block: test",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "if (true){\r\n    let testLet = 'test'; // let is block scoped\r\n    console.log('Inside Block:', testLet);\r\n}\r\n\r\nconsole.log('Outside Block:', testLet); // ReferenceError: testLet is not defined"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Inside Block: test",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "ReferenceError",
+                                "message": "testLet is not defined",
+                                "stack": "    at <Cell 186> [6, 7]\n    at <Cell 186> [8, 46]\n    at Script.runInContext (node:vm:133:12)\n    at Script.runInNewContext (node:vm:138:17)\n    at Object.runInNewContext (node:vm:296:38)\n    at C (c:\\Users\\bstan\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:113345)\n    at t.execCode (c:\\Users\\bstan\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:114312)\n    at k.<anonymous> (c:\\Users\\bstan\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:142156)\n    at k.emit (node:events:518:28)\n    at k.emit (node:domain:488:12)"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "if (true){\r\n    let anotherLet = 'another test';\r\n    console.log('Inside Block', anotherLet);\r\n    if (true) {\r\n        console.log('Nested Block', anotherLet);\r\n    }\r\n}\r\n\r\nconsole.log('Outside Block:', anotherLet)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Inside Block another test",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "ReferenceError",
+                                "message": "anotherLet is not defined",
+                                "stack": "    at <Cell 187> [9, 7]\n    at <Cell 187> [11, 46]\n    at Script.runInContext (node:vm:133:12)\n    at Script.runInNewContext (node:vm:138:17)\n    at Object.runInNewContext (node:vm:296:38)\n    at C (c:\\Users\\bstan\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:113345)\n    at t.execCode (c:\\Users\\bstan\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:114312)\n    at k.<anonymous> (c:\\Users\\bstan\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:142156)\n    at k.emit (node:events:518:28)\n    at k.emit (node:domain:488:12)"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "if (true){\r\n    const testConst = 'test'; // const is block scoped\r\n    console.log('Inside Block:', testConst);\r\n}\r\n\r\nconsole.log('Outside Block:', testConst); // ReferenceError: testConst is not defined"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Inside Block: test",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "ReferenceError",
+                                "message": "testConst is not defined",
+                                "stack": "    at <Cell 188> [6, 7]\n    at <Cell 188> [8, 46]\n    at Script.runInContext (node:vm:133:12)\n    at Script.runInNewContext (node:vm:138:17)\n    at Object.runInNewContext (node:vm:296:38)\n    at C (c:\\Users\\bstan\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:113345)\n    at t.execCode (c:\\Users\\bstan\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:114312)\n    at k.<anonymous> (c:\\Users\\bstan\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:142156)\n    at k.emit (node:events:518:28)\n    at k.emit (node:domain:488:12)"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// let can be declared without a value\r\nlet myUndefindedLet;"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// const must be declared with a value\r\nconst myUndefinedConst; // SyntaxError: Missing initializer in const declaration"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "Error",
+                                "message": "Failed to generate code object, \nundefined\n                      ^\n\nUnexpected token ';'",
+                                "stack": ""
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "# From now on, we will only use let and const"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(myName); // undefined due to \"variable hoisting\"\r\n\r\nvar myName = 'Brian Stanton'; \r\n\r\nconsole.log(myName);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "John Jacob Jinglehiemer Schmidt",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(today); // ReferenceError: Cannot access 'today' before initialization\r\n\r\nlet today = 'Wednesday'; \r\n\r\nconsole.log(today);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "undefined",
+                                "Wednesday",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Arrays\n<a id=\"arrays\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Arrays in JavaScript are similar to lists in Python. In both languages, they are heterogeneous (can contain different datatypes) collections and they both start at index 0."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Declaring"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let people = [\"Taylor Swift\", \"Harry Styles\", \"Beyonce\", \"Billie Eilish\"]\r\nconsole.log(people);\r\nconsole.log(typeof people); // 'object'"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Harry Styles', 'Beyonce', 'Billie Eilish' ]",
+                                "object",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Accessing"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(people[2])"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Beyonce",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Negative indexing does not work\r\nconsole.log(people[-1]) // undefined"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "undefined",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### .length Property"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(people.length)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "4",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### .push Method"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "the .push method in JS is similar to the .append method in Python.\n\nA key difference you will see is that in Python, .append returned None\n\nIn JS, .push returns the length of the list after your addition"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// show 5 which is the length of the list\r\nlet returnValue = people.push('Lady Gaga');\r\nconsole.log(people)\r\nconsole.log(returnValue)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  'Taylor Swift',",
+                                "  'Harry Styles',",
+                                "  'Beyonce',",
+                                "  'Billie Eilish',",
+                                "  'Lady Gaga'",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### .pop method"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                ".pop() works just like it does in Python.  It will remove the last element from an array and return its values"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let popReturn = people.pop()\r\n\r\nconsole.log(people);\r\nconsole.log(popReturn);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Harry Styles', 'Beyonce', 'Billie Eilish' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Array.pop ONLY removes the last item, does not accept an optional arg for index like Python\r\npeople.pop(1) // The 1 argument has NO EFFECT!"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'Billie Eilish'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Add Billie back for example purposes\r\npeople.push('Billie Eilish')"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33m4\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Array Destructuring Assignment"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "In JS, we can decalre multiple variables at one time and assign them to a member of an array"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(people)\r\n\r\nlet [taylor, harry, beyonce, billie] = people;\r\n\r\nconsole.log(taylor);\r\nconsole.log(harry);\r\nconsole.log(beyonce);\r\nconsole.log(billie);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Harry Styles', 'Beyonce', 'Billie Eilish' ]",
+                                "Taylor Swift",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let [a1, b1] = [1, 2, 3]\r\nconsole.log(a1);\r\nconsole.log(b1);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1",
+                                "2",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let [a2, b2, c2, d2] = [1, 2, 3]\r\nconsole.log(a2);\r\nconsole.log(b2);\r\nconsole.log(c2);\r\nconsole.log(d2);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1",
+                                "2",
+                                "3",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Using the Rest Operator `...`\n<a id=\"rest\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Sometimes, we don't want to store every member of the list into a variable and just want to store what we didn't pull out into a seperate variable. This can be achieved using the Rest operator `...`"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];\r\n\r\nlet [r, o, y, ...others] = colors\r\n\r\nconsole.log(r, typeof r) //type string\r\nconsole.log(o, typeof o) //type string\r\nconsole.log(y, typeof y) //type string\r\n\r\nconsole.log(others, typeof others) //type object - Array"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "red string",
+                                "orange string",
+                                "yellow string",
+                                "[ 'green', 'blue', 'indigo', 'violet' ] object",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### .unshift Method"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "We can add to the beginning of an array using unshift. Like the push method, will return the new length of the Array"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(people)\r\n\r\nlet unshiftReturn = people.unshift('Olivia Rodrigo')\r\n\r\nconsole.log(people)\r\n\r\nconsole.log(unshiftReturn) // length of the array\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Harry Styles', 'Beyonce', 'Billie Eilish' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### .shift Method"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "We can remove from the beginning of an array using shift, which also returns us the removed member of the array"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let shiftReturn = people.shift()\r\n\r\nconsole.log(people);\r\n\r\nconsole.log(shiftReturn);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Harry Styles', 'Beyonce', 'Billie Eilish' ]",
+                                "Olivia Rodrigo",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### indexOf Method"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "To find the index of a given member in a list, we can use the indexOf method"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(people)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Harry Styles', 'Beyonce', 'Billie Eilish' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(people.indexOf('Beyonce'))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "2",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(people.indexOf('Lady Gaga')) //returns -1 if the member is not in the Array"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "-1",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### forEach method\n<a id=\"foreach\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "JS does provide us with for loops, but it also provides us with a forEach method that will loop over an array and executes a callback function for every member of your list.\n\nA Callback function is merely a function that you pass to another function to be excuted at another time\n\n```\narray.forEach(callback_function)\n```\n\nthe callback function is structured:\n```\n(oneMemberOfArray)=>//do something with oneMemberOfArray\n```\n\n<strong>Note</strong>: This Method works out of place leaving the original array unchanged"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "people.forEach( (person) => console.log(`${person} has the best live performances`) )"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Taylor Swift has the best live performances",
+                                "Harry Styles has the best live performances",
+                                "Beyonce has the best live performances",
+                                "Billie Eilish has the best live performances",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Note:</strong> The callback function is:\n```(aName)=>console.log(aName + \" has the best live performaces\")```\nand we passed that as an argument to the forEach method\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function callBackFunction(element, index, arr){\r\n    console.log('Element:', element);\r\n    console.log('Index:', index);\r\n    console.log('Array:', arr);\r\n    console.log('\\n');\r\n    return true\r\n}\r\n\r\npeople.forEach(callBackFunction)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Element: Taylor Swift",
+                                "Index: 0",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function rockOut(person){\r\n    console.log(`${person} rocks out`)\r\n}\r\n\r\npeople.forEach(rockOut)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Taylor Swift rocks out",
+                                "Harry Styles rocks out",
+                                "Beyonce rocks out",
+                                "Billie Eilish rocks out",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "people.forEach( (person) => console.log(`${person} rocks out`) )"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Taylor Swift rocks out",
+                                "Harry Styles rocks out",
+                                "Beyonce rocks out",
+                                "Billie Eilish rocks out",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### .filter method\n<a id=\"filter\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "The filter method will iterate over an array and filter out values that return true to the condition provided by the callback funtion.\n\n\n```\narray.filter(callback_function)\n```\n\nthe callback function is structured:\n```\n(oneMemberOfArray)=>//Boolean evaluation to that evaluates to true for         oneMemberOfArray that should be retained\n```\n\n<strong>Note</strong>: This Method works out of place leaving the original array unchanged"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(people)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Harry Styles', 'Beyonce', 'Billie Eilish' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Let's filter our array of people to only include people whose name start with b\r\n\r\nconst bNames = people.filter( (person) => person[0].toUpperCase() === 'B' )\r\nconsole.log(bNames);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Beyonce', 'Billie Eilish' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function callbackFilter(e, i, a){\r\n    return i % 2; // return true if index is odd, false if it is even\r\n};\r\n\r\npeople.filter(callbackFilter)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "[",
+                                "  \u001b[32m'Harry Styles'\u001b[39m,",
+                                "  \u001b[32m'Billie Eilish'\u001b[39m",
+                                "]"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(people)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Harry Styles', 'Beyonce', 'Billie Eilish' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### .map method\n<a id=\"map\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "The map method will iterate over an array and run a function on every element of the array and store the functions returned value into the new array.\n\n```\narray.map(callback_function)\n```\n\nthe callback function is structured:\n```\n(oneMemberOfArray)=>//manipuate oneMemberOfArray\n```\n<strong>Note:</strong> This Method works out of place leaving the original array unchanged"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//Lets capitalize every memeber of our array\r\nconsole.log(people)\r\n\r\nlet allCaps = people.map( (person) => person.toUpperCase() )\r\n\r\nconsole.log(allCaps)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Harry Styles', 'Beyonce', 'Billie Eilish' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function callbackMap(el, ind, arr){\r\n    return `${el}--${ind}`\r\n}\r\n\r\nlet mapReturn1 = people.map(callbackMap)\r\n\r\nconsole.log(mapReturn1);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  'Taylor Swift--0',",
+                                "  'Harry Styles--1',",
+                                "  'Beyonce--2',",
+                                "  'Billie Eilish--3'",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(people)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Harry Styles', 'Beyonce', 'Billie Eilish' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// .forEach\r\npeople.forEach(callBackFunction)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Element: Taylor Swift",
+                                "Index: 0",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// .filter\r\npeople.filter(callBackFunction)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Element: Taylor Swift",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "[",
+                                "  \u001b[32m'Taylor Swift'\u001b[39m,",
+                                "  \u001b[32m'Harry Styles'\u001b[39m,",
+                                "  \u001b[32m'Beyonce'\u001b[39m,",
+                                "  \u001b[32m'Billie Eilish'\u001b[39m",
+                                "]"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// .map\r\npeople.map(callBackFunction)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Element: Taylor Swift",
+                                "Index: 0",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "[",
+                                "  \u001b[33mtrue\u001b[39m,",
+                                "  \u001b[33mtrue\u001b[39m,",
+                                "  \u001b[33mtrue\u001b[39m,",
+                                "  \u001b[33mtrue\u001b[39m",
+                                "]"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### .reduce method\n<a id=\"reduce\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "The reduce method will iterate over an array and run a reducer function against every member of the array.  This result will end up not with a new array but one value formed by all members of the array\n\nA Callback function is merely a function that you pass to another function to be excuted at another time\n\n```\narray.reduce(callback_function)\n```\n\nthe callback function is structured:\nthe aggregator represents all the combinations you have completed and the next item is the next item in the array that you want to combine into the aggregator.  The function body is where you define how the aggregator and the next item should be combined.\n```\n(aggregator, nextItem)=>//combine the aggregator with the nextItem in a desired way\n```\n<strong>Note:</strong> This Method works out of place leaving the original array unchanged"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let numbers = [2, 4, 6, 7, 9, 2, 5, 8, 3]\r\n\r\nfunction reducer(acc, nextNum){\r\n    console.log('==========================================')\r\n    console.log('Accumulator:', acc);\r\n    console.log('Next Num:', nextNum);\r\n    console.log('Returns:', acc + nextNum);\r\n    return acc + nextNum\r\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let numSum = numbers.reduce(reducer)\r\nconsole.log('Num Sum:', numSum)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "==========================================",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Lets turn our list of names into a comma delimited string\r\npeople.reduce( (accString, nextPerson) => accString += `, ${nextPerson}` )"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'Taylor Swift, Harry Styles, Beyonce, Billie Eilish'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### .toString method"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "This method will create a string based on your array seperated with commas but no spaces"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "people.toString()"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'Taylor Swift,Harry Styles,Beyonce,Billie Eilish'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### .join Method"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "This method will concatenate the members of the array with a given string.\n\n```\narray.join(string_to_join_on)\n```"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "people.join(', ')\r\n//returns a string type"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'Taylor Swift, Harry Styles, Beyonce, Billie Eilish'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "people.join('..--..')"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'Taylor Swift..--..Harry Styles..--..Beyonce..--..Billie Eilish'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### List Slicing"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "In Python, we can slice a list by doing something like `my_list[2:4]`\nIn JavaScript, we use the .slice method; it looks like:\n`myArray.slice(2,4)`\nThis is an out of place function"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "people.slice(1, 3)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "[",
+                                "  \u001b[32m'Harry Styles'\u001b[39m,",
+                                "  \u001b[32m'Beyonce'\u001b[39m",
+                                "]"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(numbers)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  2, 4, 6, 7, 9,",
+                                "  2, 5, 8, 3",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// With no parameters, will return a shallow copy of the array\r\nlet fullSlice = numbers.slice()\r\nconsole.log(fullSlice)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  2, 4, 6, 7, 9,",
+                                "  2, 5, 8, 3",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// With a start parameter\r\nconsole.log(numbers.slice(3))\r\nconsole.log(numbers.slice(-3))\r\nconsole.log(numbers.slice(25))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 7, 9, 2, 5, 8, 3 ]",
+                                "[ 5, 8, 3 ]",
+                                "[]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// With a start and end\r\nconsole.log(numbers.slice(2, 7))\r\nconsole.log(numbers.slice(2, -1))\r\nconsole.log(numbers.slice(1, -15))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 6, 7, 9, 2, 5 ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### List Splicing"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "JS gives use the ability to replace consective members of an array with other values using the `.splice` method\n\n```\narray.splice(start_index,delete count, items)\n```\nThis method works IN-place"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(people)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Harry Styles', 'Beyonce', 'Billie Eilish' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### Inserting an item"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// We want to add Ariana Grande after TSwift and before Harry Styles\r\n// So we use the start index of 1 because we want Ariana in the 1st index\r\n// We choose to delete 0 members of the list because we only want to insert Ariana\r\n// Then we add in the name we want to add to the list\r\n\r\nlet deletedValues = people.splice(1, 0, 'Ariana Grande')\r\nconsole.log(people);\r\nconsole.log(deletedValues);\r\n// Note: the Method returns an empty array"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  'Taylor Swift',",
+                                "  'Ariana Grande',",
+                                "  'Harry Styles',",
+                                "  'Beyonce',",
+                                "  'Billie Eilish'",
+                                "]",
+                                "[]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// This works in place so it changed the original array and did not create a new array\r\nconsole.log(people)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  'Taylor Swift',",
+                                "  'Ariana Grande',",
+                                "  'Harry Styles',",
+                                "  'Beyonce',",
+                                "  'Billie Eilish'",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### Inserting and Removing an item"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// We now want to remove Ariana Grande as she has become old news and replace her with Latto \r\n// We will start at position 1 again because we want Latto at position one\r\n// We will set the delete count to 1 to remove one entry after are insert (deletes Ariana)\r\n// And the item we want to add will be Latto \r\n\r\nlet deletedValues2 = people.splice(1, 1, 'Latto');\r\nconsole.log(people);\r\nconsole.log(deletedValues2);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Latto', 'Harry Styles', 'Beyonce', 'Billie Eilish' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "people.splice(1, 0, 'Ariana Grande')\r\nconsole.log(people)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  'Taylor Swift',",
+                                "  'Ariana Grande',",
+                                "  'Latto',",
+                                "  'Harry Styles',",
+                                "  'Beyonce',",
+                                "  'Billie Eilish'",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "people.splice(1, 2)\r\nconsole.log(people)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Harry Styles', 'Beyonce', 'Billie Eilish' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### Inserting and Removing multiple items"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Let's remove Harry Styles and Beyonce and replace them with Nomfundo Moh and Uncle Waffles\r\n// Position will be 2 to add in where Harry is currently\r\n// Delete count will be 2 to delete Harry and Beyonce\r\n// The items will be Nomfundo Moh and Uncle Waffles\r\n\r\nlet deletedValues3 = people.splice(2, 2, 'Nomfundo Moh', 'Uncle Waffles')\r\nconsole.log(people)\r\nconsole.log(deletedValues3)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Taylor Swift', 'Harry Styles', 'Nomfundo Moh', 'Uncle Waffles' ]",
+                                "[ 'Beyonce', 'Billie Eilish' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let months = ['Jan', 'Feb', 'Mar', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']\r\n\r\nmonths.splice(3, 0, 'Apr', 'May', 'Jun', 'Jul')"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "[]"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(months)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  'Jan', 'Feb', 'Mar',",
+                                "  'Apr', 'May', 'Jun',",
+                                "  'Jul', 'Aug', 'Sep',",
+                                "  'Oct', 'Nov', 'Dec'",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### In Class Exercise #3\n<a id=\"ice3\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "In the Code Block below make an Array of your favorite foods.  Then using the methods we have learned, add `\"Fried Tarantulas\"` to the end of the array, then add `\"Mokh Mchermel\"` to the front. Then, using a slice of the now modified array, print your original list of favorite foods without my additions."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Functions\n<a id=\"functions\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "There are two styles of functions we use in JavaScript: the traditional JS functions and arrow functions (introduced in ES6) "
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Regular Functions\n<a id=\"regfunc\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "The format of a function is JavaScript is:\n```\nfunction name(parameters){\n    //do stuff\n    return\n}\n```\n\n<strong>Note:</strong> In JavaScript, whitespace isn't important like it is in Python. In Python, we used indentation to create code blocks like the inside of a function, for loop, or if statement.  In JavaScript, we use braces {} to contain our code blocks.\nFollowing the Python indentation rules is still considered good practice and should be followed even in JS where the indentation doesn't affect the code execution.  This is to increase readability. "
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Using Parameters"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Note:</strong> JS will not require all parameters to be passed to let your function execute. This can cause undesired results"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Note:</strong> Keyword arguments in JS Do Not Work.  \n\nWe will show you how optional and named parameters work in JS later on by passing objects and using object destructuring."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                " //Doesn't work"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### In Class Exercise #4\n<a id=\"ice4\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "In the cell provided, create a JS Function that takes a first name and last name and returns a String that says Hello first name last name.\nThe input would be something like:\n\n```\"Bo\", \"Jackson\"```\n\nand the output would be:\n\n```\"Hello Bo Jackson\"```"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Arrow Functions\n<a id=\"arrowfunc\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Arrow Functions were introduced in ES 6\n\nThey vary from regular functions in the way they handle the keyword `this` and `new` (more on that down the road)\n\nThe syntax looks like this:\n\n```\nconst functionName = (parameter1, parameter2) =>{\n    //do stuff\n    return\n}\n```\n\nif you only have one parameter, you can drop the parentheses:\n\n```\nconst functionName = parameter1 =>{\n    //do stuff\n    return\n}\n```\n\nif you have no parameters if would look like this:\n\n```\nconst functionName = () =>{\n    //do stuff\n    return\n}\n```\n\n<strong>Note:</strong> We are using the const keyword to declare our functions, while you can use the let keyword, const is considered good practice. This is because you can't accidently override your function with the const keyword.\n\n\nAnother cool shortcut we get with arrow funtions is the ability to omit the return keyword in functions with only one line and still get a value returned. In this case, we also get to omit the function block's braces.\n\nIf the function body is only one line of code (does not contain a newline or semicolon) then the line of code in the function will also be returned as its value.\n```\nconst functionName = () => returnedValue\n```\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### Implicit Return"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "##### Explicit Return"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//Here, we stil have one line inside the function so an implicit return makes more sense\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Here, our function body is multiple lines, so the explicit return is necessary\r\n\r\n\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//With one parameter the parentheses are optional\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// You can still include the parentheses though\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Multiple parameters require the parentheses\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### In Class Exercise #5\n\nIn the cell provided Create an arrow function with no parameters and one line of code that returns the string `\"I am Beautiful\"`\n<a id=\"ice5\"></a>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### In Class Exercise #6\n<a id=\"ice6\"></a>\n\n\nIn the cells provided, write me a function using the keyword function and AGAIN as an arrow function that takes in 3 parameters: one of a name, of an age, and a multiplierm and returns a string that says:\n`If I multiply [PERSON's NAME]'s age by [muiltiplier] I get [age x multiplier]`\n\nSo if we have `'Steve'` and his age is `20` and the multiplier is `4`, the output will be\n`\"If I multiply Steve's age by 4 I get 80\"`"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//Traditional Function\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//Arrow Function with implicit return\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## The Spread Operator `...`\n<a id=\"spread\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "The spread and the rest operator `...` are the same operators, but the function differently depending on context\n\nWhen used to spread an array it will unpack all the members of an array and can be used to pass them as parameters"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// traditioanlly we could call the function like this\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//or like\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// using the spread operator\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Flow Control\n<a id=\"flow\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### If Statement\n<a id=\"if\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Like most programming languages, JavaScript provide us with the if Statement.\nWe must include our Boolean value or expression inside parentheses.\n\nSyntax:\n```\nif(aVar==aValue){\n    //do stuff\n}else if(aVar==aDifferentValue){\n    //do stuff\n}else{\n    //do stuff\n}\n```"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### If"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### If/Else"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### In Class Exercise #7\n<a id=\"ice7\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "In the cells provided, create a function that takes in two strings and returns whether they are equal or if they are different. This comparision should be case insensitive.\n\nInputs:\n`STEVE` `steve`\nReturns:\n`STEVE is the same as steve`\n\nInputs:\n`john` `steve`\nReturns:\n`john is not the same as steve`\n\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Ternary If Statement\n<a id=\"ternary\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "JS also provides us with the Ternary if syntax for writing if statements on one line.\n\nThis become exteremely important when we work with React\n\nsyntax:\n```\nboolean ? actionIfTrue : actionIfFalse\n```"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Traditional For Loops\n<a id=\"loop\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "The style of the for loop is a bit different than in Python and closer to what you see in languages like C and Java.\n\nIt is much easier to think of the for loop as a condensed while loop.\n\nThe syntax is:\n```\n   for(aVar=startingNumber; stopCondition; aVarIncrementer){\n       //do stuff\n   }\n```\n\nThe aVar=startingNumber is starting a counter to control your for loop (generally `i` is used here)\n\nThe stopCondition is a boolean that describes when to terminate the loop (generally based on the value of `i` (aVar)\n\nThe aVarIncrementer is to increment the value of aVar after each iteration of the loop"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Simple Example\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<strong>Note:</strong> Above, we started i as 0 and then after every loop we do i++ which increments i by one\n\nThe boolean condition in the middle says to run this loop until i reaches 5"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### For loop with an array"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "We will now loop over an array\n\nSince array indexing starts at zero we will start with i=0\n\nSince we want to print out every member of the array, we will use i++ as our incrementer\n\nAnd we want to loop over the entirety of the array, so we will make our stop condition i < length of the list "
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let letterList=[\"a\",\"b\",\"c\",\"d\"]\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Decrementing For Loop"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Now lets try looping through our array backwards\n\nWe want to now start at the end of the array, so we will start at the length of the array -1 (minus 1 because the last index is one less than the length)\n\nWe want to step backwards from the end of the list. We will decrement i once each loop, so our incrementer will be i--\n\nThen we want to stop when we reached the last index which would be 0 so our boolean will be i>=0"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Skipping Increments"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Now lets just print out the odd indices of our list"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### In Class Exercise #8\n<a id=\"ice8\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "In the cell provided, create a list of 9 of your favorite candies, and loop over that list printing every 3 members of the list, (so items at indices 2, 5 and 8).\n\nInput\n\n```[\"Snikers\",\"Take 5\",\"Whatchamacallit\",\"Twix\",\"Sprees\",\"Sweetarts\",\"Runts\",\"Haribo Gummy Bears\",\"Sour Patch Kids\"]```\n\nExpected output:\n\n```\nWhatchamacallit\nSweetarts\nSour Patch Kids```"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\n\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### For Of Loops\n<a id=\"forof\"><a>"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "JS introduced for of loops in ES6, and they provide a simple way to loop over a list\n\n<strong>BE CAREFUL!</strong> this is similar to the `for in` loop in python, but it is `for of`!\n\n`for in` is a different loop in JS that loops over Object (more on that later)\n\nSyntax:\n\n```\nfor( let placeholder of arrayVar){\n    //do stuff\n}\n```"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "for(let letter of letterList){\r\n    console.log(letter)\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### While Loops\n<a id=\"while\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Of course JS has a while loop and it works just like Python's\n\nSyntax\n\n```\nwhile(condition){\n    //do stuff\n}\n```\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let myCounter=0\r\nwhile(myCounter<4){\r\n    console.log(myCounter)\r\n    myCounter++\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Break and Continue\n<a id=\"bandc\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "The keywords break and continue work just the same as they do in Python"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let myCounter1=0\r\nwhile(myCounter1<4){\r\n    if(myCounter1 == 2){\r\n        break\r\n    }\r\n    console.log(myCounter1)\r\n    myCounter1++\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let myCounter2=0\r\nwhile(myCounter2<4){\r\n    if(myCounter2 == 2){\r\n        console.log('We found the count of 2')\r\n        myCounter2++\r\n        continue\r\n    }\r\n    console.log(myCounter2)\r\n    myCounter2++\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## State of an Application\n<a id=\"state\"></a>\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "An application is said to have a state. The state of an application changes quite often. When we talk about state, we are generally talking about the current values of all of our variables at a specific moment during execution."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Imagine pausing the following for loop after the first interation of the loop"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let acolor=\"Red\"\r\nfor(i=0;i<5;i++){\r\n    acolor=\"blue\"\r\n    console.log(i)\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "If we pause the execution of this code during after our first iteration of the foor loop, we can describe the state like:\n\ncolor = \"blue\"\n\ni = 1\n\nThis is different than the original state (before we ran any code). The original state could be described like:\n\ncolor=\"Red\"\n\ni = 0 \n\nWhile this may seem trivial in this example, imagine a large application with many variables over many files. You can start to see how knowing what state your application is in, at a given moment, can explain why your application is behaving in the way that it is.\n\nIn this case, this state information about i is lost after the for loops executes. "
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "<a id=\"hw\"></a>\n# Homework"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Complete the Following Coding Questions in JavaScript."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #1"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Take the three testStrings (sentence) and an array of strings (in this example dog_names) and check if one of the list members (dog names) is in the string (sentence). Return an array of the dog names found in the array\n\nhint: filter, includes \n\nfor information on includes see:\n\n[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var dogNames = [\"Max\",\"Fido\",\"Gizmo\",\"Nala\"]\r\n\r\n//Test Cases\r\nvar testString1 = \"Hello, my dog is Max, and they have purple eyes!\"\r\n//Expect ['Max']\r\n\r\nvar testString2 = \"My Dog is fast, her name is Tippi\"\r\n//Expect []\r\n\r\nvar testString3 = \"Come here Fido and Gizmo come here\"\r\n//Expect['Fido','Gizmo']\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #2"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Use `map` to convert an array of number from inches to feet \n\n1 foot = 12 inches "
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var heightsInInches = [66, 64, 60, 52, 72, 80, 51]\r\n// Expect\r\n// [\r\n//   5.5,\r\n//   5.333333333333333,\r\n//   5,\r\n//   4.333333333333333,\r\n//   6,\r\n//   6.666666666666667,\r\n//   4.25\r\n// ]\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #3"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Using the Ternary Operator and map create an array that adds `is eating pizza` to every name from the array `tmnt` that ends with `o` and add `is being rude` to any other name."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var tmnt = [\"Leonardo\", \"Michelangelo\", \"Donatello\", \"Raphael\"]\r\n// expect\r\n// [\r\n//   'Leonardo is eating pizza',\r\n//   'Michelangelo is eating pizza',\r\n//   'Donatello is eating pizza',\r\n//   'Raphael is being rude'\r\n// ]\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #4"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Find the max number in the Array.  Do not use the Math.max function.\n\nThe List will be all positive numbers"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var findAMax=[123,5436,45784,1234,34,65,234125,645,3452,13216,49]\r\n//Expect\r\n// 234125\r\n\r\n\r\n\r\n\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #5"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "At the <b>end</b> of the <b>third</b> Iteration (the third time the loop has ran) of this for Loop define the state of all the variables used in the cell"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var bingo = \"B-I-N-G-O\"\r\nvar ognib = \"\"\r\nfor(let i=bingo.length-1; i>=0; i--){\r\n    ognib+=(bingo[i])\r\n    //define state from this line on the third iteration\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//bingo value is\r\n\r\n//ognib value is\r\n\r\n// i value is\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Question #6"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Complete 3 Codewars problems using JavaScript, start with ones you have already solved in python.  Paste a link hear to the 3 questions you completed"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "1:\n\n\n2:\n\n\n3:\n\n"
+            ],
+            "outputs": []
+        }
+    ]
+}
